@@ -24,9 +24,9 @@ RESTPLUS_MASK_SWAGGER = False
 SWAGGER_UI_DOC_EXPANSION = 'none'
 
 # API metadata
-API_TITLE = 'MAX Scene Classifier'
-API_DESC = 'Classify images according to the place/location labels in the Places365 data set.'
-API_VERSION = '1.2.0'
+API_TITLE = '图片场景分类api'
+API_DESC = '基于 Places365 场景数据集的分类模型'
+API_VERSION = '0.1.0'
 MODEL_ID = API_TITLE.lower().replace(' ', '-')
 
 # default model
