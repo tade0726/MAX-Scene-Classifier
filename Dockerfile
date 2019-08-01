@@ -16,13 +16,13 @@
 
 FROM codait/max-base:v1.1.3
 
-# ARG model_bucket=https://s3.us-south.cloud-object-storage.appdomain.cloud/max-assets-prod/max-scene-classifier/1.0.1
-# ARG model_file=assets.tar.gz
+ARG model_bucket=https://s3.us-south.cloud-object-storage.appdomain.cloud/max-assets-prod/max-scene-classifier/1.0.1
+ARG model_file=assets.tar.gz
 
 WORKDIR /workspace
 
-# RUN wget -nv --show-progress --progress=bar:force:noscroll  ${model_bucket}/${model_file} --output-document=assets/${model_file} && \
-#   tar -x -C assets/ -f assets/${model_file} -v && rm assets/${model_file}
+RUN wget -nv --show-progress --progress=bar:force:noscroll  ${model_bucket}/${model_file} --output-document=assets/${model_file} && \
+  tar -x -C assets/ -f assets/${model_file} -v && rm assets/${model_file}
 
 # Conda is the preferred way to install Pytorch, but the Anaconda install pulls
 # in non-OSS libraries with customized license terms, specifically CUDA and MKL.
@@ -34,7 +34,7 @@ COPY requirements.txt /workspace
 RUN pip install -r requirements.txt
 
 COPY . /workspace
-# RUN md5sum -c md5sums.txt # check file integrity
+RUN md5sum -c md5sums.txt # check file integrity
 
 EXPOSE 5000
 

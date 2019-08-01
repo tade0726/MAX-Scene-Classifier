@@ -110,4 +110,4 @@ ENV/
 .ipynb_checkpoints/
 notebooks/
 tmp/
-assets/
+*.pth

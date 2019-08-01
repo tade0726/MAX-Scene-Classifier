@@ -54,9 +54,16 @@ class ModelLabelsAPI(MetadataAPI):
 
 # === Predict API
 
+labels_dict = MAX_API.model("Labels", {
+    'category': fields.String(required=True, description='Class label'), 
+    'category_zh': fields.String(required=True, description='Class label zh'), 
+    'category_lvl_one': fields.String(required=True, description='Class label indoor/outdoor'), 
+    'category_lvl_one_zh': fields.String(required=True, description='Class label indoor/outdoor zh')
+})
+
 label_prediction = MAX_API.model('LabelPrediction', {
     'label_id': fields.String(required=False, description='Label identifier'),
-    'label': fields.String(required=True, description='Class label'),
+    'label': fields.Nested(labels_dict),
     'probability': fields.Float(required=True, description='Predicted probability for the class label')
 })
 
