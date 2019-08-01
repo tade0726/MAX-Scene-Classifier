@@ -105,3 +105,9 @@ ENV/
 
 /deeplabv3_pascal_trainval_2018_01_04.tar.gz
 /.pytest_cache/
+
+# jupyter notebooks and misc
+.ipynb_checkpoints/
+notebooks/
+tmp/
+assets/

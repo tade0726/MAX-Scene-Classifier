@@ -27,6 +27,8 @@ import io
 from PIL import Image
 import logging
 
+import json
+
 logger = logging.getLogger()
 
 
@@ -79,11 +81,12 @@ class ModelWrapper(MAXModelWrapper):
         self._load_assets(path)
 
     def _load_assets(self, path):
-        file_name = '{}/categories_places365.txt'.format(path)
+        file_name = '{}/categories_place365_zh.json'.format(path)
         classes = list()
         with open(file_name) as class_file:
-            for line in class_file:
-                classes.append(line.strip().split(' ')[0][3:])
+            data = json.load(class_file)
+            for item in data:
+                classes.append(item)
         self.classes = tuple(classes)
 
     def _pre_process(self, x):

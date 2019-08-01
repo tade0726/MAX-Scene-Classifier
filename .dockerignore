@@ -5,3 +5,7 @@ README.*
 .gitignore
 tests/
 .pytest_cache
+.ipynb_checkpoints/
+notebooks/
+tmp/
+.env
