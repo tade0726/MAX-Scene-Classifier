@@ -21,18 +21,18 @@ DEBUG = False
 
 # Flask-restplus settings
 RESTPLUS_MASK_SWAGGER = False
-SWAGGER_UI_DOC_EXPANSION = 'none'
+SWAGGER_UI_DOC_EXPANSION = "none"
 
 # API metadata
-API_TITLE = '图片场景分类api'
-API_DESC = '基于 Places365 场景数据集的分类模型'
-API_VERSION = '0.1.0'
-MODEL_ID = API_TITLE.lower().replace(' ', '-')
+API_TITLE = "图片场景分类api"
+API_DESC = "基于 Places365 场景数据集的分类模型"
+API_VERSION = "0.1.0"
+MODEL_ID = API_TITLE.lower().replace(" ", "-")
 
 # default model
-MODEL_NAME = 'resnet18_places365'
-DEFAULT_MODEL_PATH = 'assets'
-DEFAULT_MODEL_FILE = 'whole_resnet18_places365_python36.pth'
+MODEL_NAME = "resnet18_places365"
+DEFAULT_MODEL_PATH = "assets"
+DEFAULT_MODEL_FILE = "whole_resnet18_places365_python36.pth"
 # for image models, may not be required
 MODEL_INPUT_IMG_SIZE = (256, 256)
-MODEL_LICENSE = 'CC BY'
+MODEL_LICENSE = "CC BY"

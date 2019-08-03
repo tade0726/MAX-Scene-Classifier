@@ -6,8 +6,8 @@ services:
   - docker
 
 install:
-  - docker build -t max-scene-classifier .
-  - docker run -it -d -p 5000:5000 max-scene-classifier
+  - docker build -t scene-classifier .
+  - docker run -it -d -p 5000:5000 scene-classifier
 
 before_script:
   - pip install -r test-requirements.txt
